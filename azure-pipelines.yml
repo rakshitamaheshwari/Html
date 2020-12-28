@@ -1,7 +1,7 @@
 variables:
-  a: $Build.Reason
-  b: $Build.BuildUri
-  c: $Build.BuildNumber
+  a: $(Build.Reason)
+  b: $(Build.BuildUri)
+  c: $(Build.BuildNumber)
 steps: 
 - bash: echo $(a)
 - powershell: echo $(b)
