@@ -5,7 +5,7 @@
 
 variables:
  - name: pullRequest
-   value: $[eq(variables['Build.Reason'], 'PullRequest')]
+   value: $(Build.Reason)
 
 steps: 
 - bash: echo $(pullRequest)
