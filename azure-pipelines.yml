@@ -1,10 +1,8 @@
 variables:
- - name: pullRequest
-   value: 
-   - $Build.Reason
-   - $Build.BuildUri
-   - $Build.BuildNumber
+  a: $Build.Reason
+  b: $Build.BuildUri
+  c: $Build.BuildNumber
 steps: 
-- bash: echo $(pullRequest[Build.BuildNumber])
-- powershell: echo $(pullRequest)
-- script: echo $(pullRequest)
+- bash: echo $(a)
+- powershell: echo $(b)
+- script: echo $(c)
