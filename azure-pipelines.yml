@@ -4,17 +4,10 @@
 # https://aka.ms/yaml
 
 variables:
-- name: one
-  value: initialValue 
+ - name: pullRequest
+   value: $[eq(variables['Build.Reason'], 'PullRequest')]
 
-steps:
-  - script: |
-      echo ${{ variables.one }} # outputs initialValue
-      echo $(one)
-    displayName: First variable pass
-  - bash: echo '##vso[task.setvariable variable=one]secondValue'
-    displayName: Set new variable value
-  - script: |
-      echo ${{ variables.one }} # outputs initialValue
-      echo $(one) # outputs secondValue
-    displayName: Second variable pass
+steps: 
+- bash: echo $(pullRequest)
+- powershell: echo $(pullRequest)
+- script: echo $(pullRequest)
