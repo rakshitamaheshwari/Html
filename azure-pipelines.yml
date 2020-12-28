@@ -1,13 +1,10 @@
-# HTML
-# Archive your static HTML project and save it with the build record.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 variables:
  - name: pullRequest
-   value: $(Build.Reason)
-
+   value: 
+   - $Build.Reason
+   - $Build.BuildUri
+   - $Build.BuildNumber
 steps: 
-- bash: echo $(pullRequest)
+- bash: echo $(pullRequest[Build.BuildNumber])
 - powershell: echo $(pullRequest)
 - script: echo $(pullRequest)
