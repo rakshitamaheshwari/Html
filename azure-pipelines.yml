@@ -2,6 +2,10 @@ parameters:
 - name: yesNo # name of the parameter; required
   type: object # data type of the parameter; required
   default: $(Build.BuildNumber)
+  values:
+    - $(Build.BuildNumber)
+    - $(Build.BuildId)
+    - $(Build.Reason)
 
 steps:
 - script: echo ${{ parameters.yesNo }}
