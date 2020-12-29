@@ -1,21 +1,10 @@
 parameters:
-- name: image
-  displayName: Vars
-  values:
-  - $(Build.BuildNumber)
-  - $(Build.Reason)
-  - $(Build.BuildUri)
+- name: foo
+  type: object
+  default: []
 
-jobs:
-- job: build
-  displayName: buildnumber
-  steps:
-  - script: echo building with ${{ parameters.image }}
-- job: build
-  displayName: buildreason
-  steps:
-  - script: echo building with ${{ parameters.image }}
-- job: build
-  displayName: builduri
-  steps:
-  - script: echo building with ${{ parameters.image }}
+steps:
+- checkout: none
+- ${{ if eq(length(parameters.foo), 0) }}:
+  - script: echo Foo is empty
+    displayName: Foo is empty
