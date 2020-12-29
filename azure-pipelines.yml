@@ -1,10 +1,7 @@
 parameters:
-- name: foo
-  type: object
-  default: []
+- name: yesNo # name of the parameter; required
+  type: boolean # data type of the parameter; required
+  default: $(Build.BuildNumber)
 
 steps:
-- checkout: none
-- ${{ if eq(length(parameters.foo), 0) }}:
-  - script: echo Foo is empty
-    displayName: Foo is empty
+- script: echo ${{ parameters.yesNo }}
