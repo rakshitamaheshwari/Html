@@ -9,7 +9,7 @@ trigger:
 pool:
   name: agentvmss
 
-Stages:
+stages:
 
 - stage: BUILD
   displayName: 'Package helm charts'
