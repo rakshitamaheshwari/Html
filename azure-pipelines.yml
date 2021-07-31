@@ -12,23 +12,27 @@ stages:
   displayName: 'Package helm charts'
   pool:
     name: agentvmss
-  steps:
-  - task: CopyFiles@2
-    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-    inputs:
-      SourceFolder: index.html
-      TargetFolder: '$(build.artifactstagingdirectory)'
+  jobs:
+  - job: BUILD
+    displayName: 'Package helm charts'
+    steps:
+    - task: CopyFiles@2
+      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+      inputs:
+        SourceFolder: index.html
+        TargetFolder: '$(build.artifactstagingdirectory)'
 
 
 - stage: BUILD2
   displayName: 'Package helm charts'
   pool:
     name: agentvmss
-  steps:
-  - task: CopyFiles@2
-    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-    inputs:
-      SourceFolder: index.html
-      TargetFolder: '$(build.artifactstagingdirectory)'
- 
-
+  jobs:
+  - job: BUILD
+    displayName: 'Package helm charts'
+    steps:
+    - task: CopyFiles@2
+      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+      inputs:
+        SourceFolder: index.html
+        TargetFolder: '$(build.artifactstagingdirectory)'
