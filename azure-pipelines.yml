@@ -6,33 +6,29 @@
 trigger:
 - master
 
-pool:
-  name: agentvmss
-
 stages:
 
 - stage: BUILD
   displayName: 'Package helm charts'
   pool:
-    #vmImage: windows-2019
-    name: agentvmss
-  jobs:
-  - job: BUILD
-    displayName: 'Package helm charts'
-    script:
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
-      
+  name: agentvmss
+  steps:
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+    inputs:
+      SourceFolder: index.html
+      TargetFolder: '$(build.artifactstagingdirectory)'
+
+
 - stage: BUILD2
   displayName: 'Package helm charts'
   pool:
-    #vmImage: windows-2019
-    name: agentvmss
-  jobs:
-  - job: BUILD
-    displayName: 'Package helm charts'
-    script:
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
+  name: agentvmss
+  steps:
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+    inputs:
+      SourceFolder: index.html
+      TargetFolder: '$(build.artifactstagingdirectory)'
  
 
