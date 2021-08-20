@@ -11,7 +11,7 @@ stages:
 - stage: BUILD
   displayName: 'Package helm charts'
   pool:
-    name: agentvmss
+    name: vmss-pool
   jobs:
   - job: BUILD
     displayName: 'Package helm charts'
