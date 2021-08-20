@@ -21,14 +21,7 @@ stages:
       inputs:
         SourceFolder: index.html
         TargetFolder: '$(build.artifactstagingdirectory)'
-
-
-- stage: BUILD2
-  displayName: 'Package helm charts'
-  pool:
-    name: vmss-pool
-  jobs:
-  - job: BUILD
+  - job: BUILD2
     displayName: 'Package helm charts'
     steps:
     - task: CopyFiles@2
