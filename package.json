@@ -24,17 +24,6 @@
     "test:coverage": "nyc --reporter=text mocha --reporter spec --require ts-node/register src/**/*.spec.ts --exit"
   },
   "dependencies": {
-    "@azure/monitor-opentelemetry-exporter": "^1.0.0-beta.3",
-    "@opentelemetry/api": "^1.0.0-rc.0",
-    "@opentelemetry/core": "^0.19.0",
-    "@opentelemetry/exporter-prometheus": "^0.19.0",
-    "@opentelemetry/instrumentation-express": "^0.15.0",
-    "@opentelemetry/instrumentation-http": "^0.19.0",
-    "@opentelemetry/node": "^0.19.0",
-    "@pickles/redis-kernel": "^0.5.1",
-    "@pickles/shared-kernel": "^14.0.2",
-    "@pickles/sql-kernel": "^0.5.0-alpha.2",
-    "@pickles/vendor-shared-kernel": "^0.1.2",
     "applicationinsights": "^1.4.0",
     "async-exit-hook": "^2.0.1",
     "axios": "^0.19.2",
